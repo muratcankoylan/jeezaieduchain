@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}Course Success{% endblock %}
+
+{% block content %}
+<div class="success-wrapper">
+    <div class="success-container neo-container">
+        <div class="success-header">
+            <div class="neo-line"></div>
+            <h1>AI Achievement Unlocked</h1>
+            <div class="neo-line"></div>
+        </div>
+
+        <div class="success-content">
+            <div class="achievement-badge neo-badge">
+                <div class="badge-glow neo-glow"></div>
+                <div class="badge-icon">🤖</div>
+            </div>
+
+            <div class="achievement-details">
+                <h2 class="achievement-title">Algorithmic Trading with AI Agents</h2>
+                <div class="achievement-info">
+                    <div class="achievement-info-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>Completed: 2024-10-30</span>
+                    </div>
+                    <div class="achievement-info-item">
+                        <i class="fas fa-hashtag"></i>
+                        <span>Course ID: COURSE-001</span>
+                    </div>
+                </div>
+
+                <div class="claim-section">
+                    <button id="claimCredentialBtn" class="btn-claim cyber-button">
+                        <span class="cyber-button__glitch"></span>
+                        <span class="cyber-button__text">
+                            <span class="btn-text">Initialize Claim</span>
+                            <span class="btn-icon">⚡</span>
+                        </span>
+                        <span class="cyber-button__line cyber-button__line--top"></span>
+                        <span class="cyber-button__line cyber-button__line--bottom"></span>
+                    </button>
+                    <div id="credentialStatus" class="credential-status"></div>
+                </div>
+            </div>
+
+            <div class="next-steps">
+                <a href="{{ url_for('certification') }}" class="neo-button neo-button--secondary">
+                    <span class="neo-button__text">
+                        <span class="btn-text">View All Credentials</span>
+                        <span class="btn-icon">→</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="neo-circles">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const claimButton = document.getElementById('claimCredentialBtn');
+    const statusDiv = document.getElementById('credentialStatus');
+    
+    if (claimButton) {
+        claimButton.addEventListener('click', async function() {
+            this.classList.add('loading');
+            statusDiv.innerHTML = '<div class="status-message"><span class="status-icon">⚡</span> Initializing AI credential generation...</div>';
+            statusDiv.className = 'credential-status processing';
+            
+            try {
+                const formData = new FormData();
+                formData.append('achievement_id', '{{ course.id }}');
+                formData.append('name', '{{ course.name }}');
+                formData.append('type', 'Certificate');
+                formData.append('description', 'Successfully completed {{ course.name }} - A comprehensive course on developing autonomous AI agents for financial markets.');
+                formData.append('criteria', 'Successfully completed all course modules, implemented trading algorithms, and passed the final assessment with distinction.');
+
+                const response = await fetch('/issue-credential', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(result.error || 'Failed to issue credential');
+                }
+
+                statusDiv.innerHTML = '<div class="status-message success"><span class="status-icon">✨</span> AI Credential successfully initialized and deployed</div>';
+                statusDiv.className = 'credential-status success';
+                
+                this.disabled = true;
+                this.classList.remove('loading');
+                this.classList.add('claimed');
+                this.innerHTML = `
+                    <span class="neo-button__glitch"></span>
+                    <span class="neo-button__tag">VERIFIED</span>
+                    <span class="neo-button__text">
+                        <span class="btn-text">Claim Verified</span>
+                        <span class="btn-icon">✓</span>
+                    </span>
+                `;
+
+            } catch (error) {
+                console.error('Error:', error);
+                statusDiv.innerHTML = '<div class="status-message error"><span class="status-icon">❌</span> Initialization failed. Please try again.</div>';
+                statusDiv.className = 'credential-status error';
+                this.classList.remove('loading');
+            }
+        });
+    }
+});
+</script>
+{% endblock %} 

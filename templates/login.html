@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="space-wrapper">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    
+    <div class="login-container cyber-panel">
+        <div class="cyber-header">
+            <div class="cyber-glitch-box">
+                <h1 class="cyber-glitch" data-text="JEEZAI">JEEZAI</h1>
+            </div>
+            <div class="cyber-scanner"></div>
+        </div>
+
+        <div class="login-subtitle">
+            <div class="glitch-text" data-text="Decentralized AI Learning">
+                Decentralized AI Learning
+            </div>
+            <div class="cyber-text-box">
+                <span class="cyber-text">Secure</span>
+                <span class="dot">•</span>
+                <span class="cyber-text">Verifiable</span>
+                <span class="dot">•</span>
+                <span class="cyber-text">Autonomous</span>
+            </div>
+        </div>
+
+        <div class="login-content">
+            <div class="cyber-grid">
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+            </div>
+            
+            <div class="ocid-connect-wrapper">
+                <button id="ocidLoginBtn" class="ocid-connect-button">
+                    <img src="{{ url_for('static', filename='images/Rectangular Connect OCID.png') }}" 
+                         alt="Connect with OC-ID"
+                         class="ocid-button-image">
+                </button>
+                <p class="ocid-connect-info">
+                    By connecting, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="cyber-circles">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

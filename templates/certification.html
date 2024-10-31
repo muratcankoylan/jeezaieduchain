@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Certification{% endblock %}
+
+{% block content %}
+<div class="success-wrapper">
+    <div class="success-container">
+        <div class="success-header">
+            <div class="cyber-line"></div>
+            <h1>Your Achievements</h1>
+            <div class="cyber-line"></div>
+        </div>
+
+        <div class="success-content">
+            <div class="achievement-badge">
+                <div class="badge-glow"></div>
+                <div class="badge-icon">🤖</div>
+            </div>
+
+            <div class="achievement-details">
+                <h2>Decentralized AI Credentials</h2>
+                <p class="achievement-description">
+                    View your verified achievements and credentials on the OpenCampus network
+                </p>
+            </div>
+
+            <div class="claim-section">
+                <a href="{{ credentials.profile_url }}" class="btn-claim glow-button" target="_blank">
+                    <span class="btn-text">View on OC-ID</span>
+                    <span class="btn-icon">🔗</span>
+                </a>
+            </div>
+
+            <div class="next-steps">
+                <a href="{{ url_for('course_success') }}" class="btn-next glow-button">
+                    Return to Course
+                </a>
+            </div>
+        </div>
+
+        <div class="cyber-circles">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

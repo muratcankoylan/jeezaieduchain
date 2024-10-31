@@ -1,0 +1,2170 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+nav {
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent-primary);
+}
+
+/* Login Page */
+.login-container {
+    max-width: 400px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.login-container h1 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 2rem;
+}
+
+.login-container p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.ocid-login {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.btn-ocid {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-ocid:hover {
+    transform: scale(1.02);
+}
+
+.ocid-button-image {
+    max-width: 300px;
+    height: auto;
+    display: block;
+}
+
+.btn-ocid:focus {
+    outline: none;
+}
+
+.btn-ocid:active {
+    transform: scale(0.98);
+}
+
+/* Profile Container */
+.profile-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.profile-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-title h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.profile-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Profile Sections */
+.profile-section {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.profile-section h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.info-item {
+    padding: 1rem;
+    background: var(--bg-primary);
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.info-item label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-item p {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+}
+
+.eth-address {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.875rem;
+    word-break: break-all;
+}
+
+/* Buttons */
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-secondary);
+}
+
+.btn-secondary {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-secondary);
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    color: var(--text-primary);
+}
+
+.btn-danger:hover {
+    opacity: 0.9;
+}
+
+/* Flash messages */
+.flash-messages {
+    margin-bottom: 1rem;
+}
+
+.flash {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.certificate-card {
+    background: rgba(26, 26, 26, 0.95);
+    border: 1px solid var(--accent-primary);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--accent-primary);
+}
+
+.certificate-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.certificate-card:hover::before {
+    left: 100%;
+}
+
+.certificate-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--accent-primary);
+}
+
+.certificate-info {
+    padding: 1.5rem;
+}
+
+.certificate-info h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+.certificate-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.certificate-description {
+    color: var(--text-secondary);
+    margin: 1rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.certificate-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Certificate action buttons */
+.certificate-actions .btn {
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    border: 1px solid var(--accent-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.certificate-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px var(--accent-primary);
+}
+
+.certificate-actions .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.certificate-actions .btn:hover::before {
+    left: 100%;
+}
+
+.certificate-actions .btn-primary {
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+    border: none;
+}
+
+.certificate-actions .btn-secondary {
+    border-color: var(--accent-secondary);
+}
+
+.certificate-actions .btn-icon {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.certificate-actions .btn:hover .btn-icon {
+    transform: translateX(3px);
+}
+
+/* Empty state styling */
+.no-certificates {
+    text-align: center;
+    padding: 3rem;
+    background: rgba(26, 26, 26, 0.95);
+    border: 1px solid var(--accent-primary);
+    border-radius: 10px;
+    margin: 2rem;
+}
+
+.empty-state-image {
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+    filter: drop-shadow(0 0 10px var(--glow-color));
+}
+
+.no-certificates h2 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+.no-certificates p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.credential-details {
+    margin-top: 1.5rem;
+}
+
+.credential-criteria {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-item label {
+    font-weight: 500;
+    color: #555;
+}
+
+.info-item p {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Dark theme colors */
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #00ff41;  /* Matrix green */
+    --text-secondary: #0af;   /* Cyber blue */
+    --accent-primary: #ff0055; /* Neon pink */
+    --accent-secondary: #00ffff; /* Cyan */
+    --border-color: #2c3e50;
+    --glow-color: rgba(0, 255, 65, 0.3);
+    --danger: #ff0044;
+    --success: #00ff41;
+}
+
+.welcome-banner {
+    background: linear-gradient(135deg, var(--bg-secondary), var(--accent-primary));
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-text {
+    text-align: center;
+}
+
+.welcome-text h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--text-primary);
+    text-shadow: 0 0 15px var(--glow-color),
+                 0 0 30px var(--glow-color);
+    letter-spacing: 2px;
+    background: none;
+    -webkit-text-fill-color: var(--text-primary);
+}
+
+.welcome-text p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    color: var(--accent-primary);
+    font-size: 1.5rem;
+    margin: 0;
+    padding-right: 1rem;
+}
+
+.header-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent-primary), transparent);
+}
+
+.info-item.glow {
+    background: rgba(26, 26, 26, 0.95);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem;
+}
+
+.info-item.glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--glow-color);
+    border-color: var(--accent-glow);
+}
+
+.info-item.glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(52, 152, 219, 0.1),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.info-item.glow:hover::before {
+    left: 100%;
+}
+
+.highlight {
+    color: var(--accent-glow);
+    font-weight: 500;
+}
+
+.eth-address {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.95rem;
+    word-break: break-all;
+    color: var(--text-primary) !important;
+    opacity: 0.9;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glow-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--glow-color);
+}
+
+.glow-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        transparent,
+        rgba(52, 152, 219, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+.glow-button:hover::after {
+    left: 100%;
+}
+
+.info-item label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.info-item p.highlight {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Add to your existing CSS */
+
+.login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(52, 152, 219, 0.1) 50%,
+        transparent 100%
+    );
+    animation: gradient-rotate 10s linear infinite;
+}
+
+@keyframes gradient-rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.login-container {
+    background: rgba(26, 26, 26, 0.95);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(52, 152, 219, 0.2);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cyber-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-glow),
+        transparent
+    );
+}
+
+.login-header h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 800;
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.login-subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.glitch {
+    color: var(--accent-glow);
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(31px, 9999px, 94px, 0);
+    }
+    4.166666666666666% {
+        clip: rect(91px, 9999px, 43px, 0);
+    }
+    8.333333333333332% {
+        clip: rect(15px, 9999px, 13px, 0);
+    }
+    /* Add more keyframes as needed */
+}
+
+.login-content {
+    text-align: center;
+}
+
+.login-content p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.btn-ocid {
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.btn-ocid:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+
+.cyber-circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    border-radius: 50%;
+    animation: circle-animate 20s linear infinite;
+}
+
+.circle:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    right: -50px;
+}
+
+.circle:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
+    left: -75px;
+    animation-delay: -5s;
+}
+
+.circle:nth-child(3) {
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    right: -35px;
+    animation-delay: -10s;
+}
+
+@keyframes circle-animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Add a subtle glow effect on hover */
+.info-item.glow:hover .highlight {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Make the section header more prominent */
+.section-header h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin: 0;
+    padding-right: 1rem;
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.header-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--text-primary), transparent);
+    opacity: 0.3;
+}
+
+/* Add to your existing CSS */
+
+.success-wrapper {
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.success-container {
+    background: rgba(26, 26, 26, 0.95);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(52, 152, 219, 0.2);
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.cyber-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #3498db, transparent);
+    flex: 1;
+    opacity: 0.5;
+}
+
+.success-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #e0e0e0;
+    margin: 0 1rem;
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.achievement-badge {
+    width: 100px;
+    height: 100px;
+    margin: 2rem auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 152, 219, 0.3);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: pulse 2s infinite;
+}
+
+.badge-icon {
+    font-size: 3rem;
+    color: #e0e0e0;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.3; }
+    50% { transform: scale(1.05); opacity: 0.5; }
+    100% { transform: scale(0.95); opacity: 0.3; }
+}
+
+.achievement-details h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.achievement-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #b3b3b3;
+}
+
+.date-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.date-value {
+    color: #3498db;
+    font-weight: 500;
+}
+
+.claim-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.claim-text {
+    color: #b3b3b3;
+    margin-bottom: 1.5rem;
+}
+
+.cyber-button {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: #e0e0e0;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+}
+
+.cyber-button__glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cyber-button:hover .cyber-button__glitch {
+    opacity: 1;
+}
+
+.cyber-button__tag {
+    font-size: 0.7rem;
+    padding: 2px 4px;
+    background: #1a1a1a;
+    border-radius: 3px;
+    position: absolute;
+    top: -8px;
+    right: 8px;
+    opacity: 0.8;
+}
+
+.cyber-button__text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.cyber-button:hover .btn-icon {
+    transform: translateX(3px);
+}
+
+.credential-status {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    min-height: 20px;
+    text-align: center;
+    color: #3498db;
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.credential-status.success {
+    color: #2ecc71;
+    text-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+}
+
+.credential-status.error {
+    color: #e74c3c;
+    text-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+}
+
+.next-steps {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cyber-circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    border-radius: 50%;
+    animation: circle-animate 20s linear infinite;
+}
+
+.circle:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    right: -50px;
+}
+
+.circle:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
+    left: -75px;
+    animation-delay: -5s;
+}
+
+.circle:nth-child(3) {
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    right: -35px;
+    animation-delay: -10s;
+}
+
+@keyframes circle-animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Add cyberpunk background effect */
+body {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1a1a 100%);
+    color: var(--text-primary);
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0px,
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Update navigation */
+nav {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom: 2px solid var(--accent-primary);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-primary),
+        transparent
+    );
+    animation: glow 2s linear infinite;
+}
+
+/* Glowing button effect */
+.btn {
+    background: transparent;
+    border: 1px solid var(--accent-primary);
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    box-shadow: 0 0 20px var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+/* Add glitch effect for text */
+.glitch {
+    position: relative;
+    text-shadow: 0.05em 0 0 var(--accent-primary),
+                -0.05em -0.025em 0 var(--accent-secondary);
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0) }
+    20% { transform: translate(-2px, 2px) }
+    40% { transform: translate(-2px, -2px) }
+    60% { transform: translate(2px, 2px) }
+    80% { transform: translate(2px, -2px) }
+    100% { transform: translate(0) }
+}
+
+/* Add neon glow to headings */
+h1, h2, h3 {
+    color: var(--text-primary);
+    text-shadow: 0 0 10px var(--glow-color),
+                 0 0 20px var(--glow-color),
+                 0 0 30px var(--glow-color);
+}
+
+/* Update cards and sections */
+.profile-section, .info-item {
+    background: rgba(26, 26, 26, 0.95);
+    border: 1px solid var(--accent-primary);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.profile-section:hover, .info-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--accent-primary);
+}
+
+/* Add scanning line effect */
+@keyframes scan {
+    0% { transform: translateY(-100%) }
+    100% { transform: translateY(100%) }
+}
+
+.profile-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-primary),
+        transparent
+    );
+    animation: scan 3s linear infinite;
+    opacity: 0.5;
+}
+
+/* Update form elements */
+input, textarea {
+    background: rgba(26, 26, 26, 0.95);
+    border: 1px solid var(--accent-primary);
+    color: var(--text-primary);
+    backdrop-filter: blur(5px);
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 15px var(--accent-primary);
+    outline: none;
+}
+
+/* Add loading animation */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--accent-primary);
+    animation: loading 2s ease infinite;
+}
+
+@keyframes loading {
+    0% { width: 0; left: 0; }
+    50% { width: 100%; left: 0; }
+    100% { width: 0; left: 100%; }
+}
+
+/* Update welcome banner text for better readability */
+.welcome-text h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--text-primary);
+    text-shadow: 0 0 15px var(--glow-color),
+                 0 0 30px var(--glow-color);
+    letter-spacing: 2px;
+    background: none;
+    -webkit-text-fill-color: var(--text-primary);
+}
+
+.welcome-text p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* Update course success content alignment */
+.achievement-details {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: 10px;
+    border: 1px solid var(--accent-primary);
+}
+
+.achievement-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.achievement-info-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.achievement-info-item span {
+    color: var(--text-primary);
+    text-shadow: 0 0 8px var(--glow-color);
+}
+
+/* Enhanced Initialize Claim button */
+.btn-claim {
+    position: relative;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+    border: none;
+    border-radius: 8px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 2rem 0;
+    min-width: 250px;
+}
+
+.btn-claim::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 10px;
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-claim:hover::before {
+    opacity: 1;
+}
+
+.btn-claim:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 30px var(--accent-primary);
+}
+
+.btn-claim .btn-text {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-claim .btn-icon {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-claim:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+/* Add pulsing effect to the claim button */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-claim:active {
+    transform: scale(0.98);
+}
+
+/* Credential status styling */
+.credential-status {
+    margin-top: 1rem;
+    min-height: 30px;
+    transition: all 0.3s ease;
+}
+
+.status-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.status-icon {
+    font-size: 1.2rem;
+}
+
+/* Processing state */
+.credential-status.processing .status-message {
+    color: var(--accent-secondary);
+    border: 1px solid var(--accent-secondary);
+    animation: pulse 2s infinite;
+}
+
+/* Success state */
+.credential-status.success .status-message {
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+/* Error state */
+.credential-status.error .status-message {
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+/* Loading state for the claim button */
+#claimCredentialBtn.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+#claimCredentialBtn.loading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-secondary);
+    animation: loading 2s ease infinite;
+}
+
+/* Claimed state */
+#claimCredentialBtn.claimed {
+    background: linear-gradient(45deg, var(--success), var(--accent-secondary));
+    pointer-events: none;
+}
+
+#claimCredentialBtn.claimed .btn-text,
+#claimCredentialBtn.claimed .btn-icon {
+    color: #000000; /* Make text black */
+    font-weight: 600; /* Make it slightly bolder for better contrast */
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Update the View All Credentials button */
+.neo-button--secondary .neo-button__text {
+    color: #ffffff; /* Make text white */
+}
+
+.neo-button--secondary .btn-icon {
+    color: #ffffff; /* Make arrow white */
+}
+
+/* Update View on OC-ID and Return to Course buttons */
+.btn-next,
+.btn-claim {
+    background: transparent !important; /* Remove background */
+    border: 1px solid var(--accent-primary);
+    position: relative;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 2rem 0;
+    min-width: 250px;
+}
+
+/* Style for Return to Course button */
+.btn-next {
+    color: #ffffff !important; /* Make text white */
+}
+
+.btn-next .btn-text,
+.btn-next .btn-icon {
+    color: #ffffff !important; /* Ensure both text and icon are white */
+}
+
+/* Hover effects for both buttons */
+.btn-next:hover,
+.btn-claim:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px var(--accent-primary);
+}
+
+/* Glow effect on hover */
+.btn-next::before,
+.btn-claim::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-next:hover::before,
+.btn-claim:hover::before {
+    opacity: 1;
+}
+
+/* Add title styling */
+.achievement-title {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--glow-color);
+    position: relative;
+    display: inline-block;
+}
+
+.achievement-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--accent-primary), 
+        var(--accent-secondary), 
+        var(--accent-primary), 
+        transparent
+    );
+}
+
+/* Enhanced cyber button styling */
+.cyber-button {
+    --btn-height: 64px;
+    --btn-width: 300px;
+    --btn-border-size: 2px;
+    
+    position: relative;
+    width: var(--btn-width);
+    height: var(--btn-height);
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.cyber-button__text {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+}
+
+.cyber-button__glitch {
+    position: absolute;
+    top: calc(var(--btn-border-size) * -1);
+    left: calc(var(--btn-border-size) * -1);
+    right: calc(var(--btn-border-size) * -1);
+    bottom: calc(var(--btn-border-size) * -1);
+    background: var(--accent-primary);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(var(--btn-border-size) * 1),
+        calc(100% - var(--btn-border-size) * 1) 100%,
+        var(--btn-border-size) 100%,
+        0 calc(100% - var(--btn-border-size) * 1)
+    );
+}
+
+.cyber-button__line {
+    position: absolute;
+    background: var(--accent-primary);
+}
+
+.cyber-button__line--top {
+    top: var(--btn-border-size);
+    width: calc(100% - var(--btn-border-size) * 2);
+    height: var(--btn-border-size);
+    left: var(--btn-border-size);
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+.cyber-button__line--bottom {
+    bottom: var(--btn-border-size);
+    width: calc(100% - var(--btn-border-size) * 2);
+    height: var(--btn-border-size);
+    left: var(--btn-border-size);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+.cyber-button:hover {
+    color: var(--text-primary);
+    text-shadow: 0 0 8px var(--glow-color);
+}
+
+.cyber-button:hover .cyber-button__glitch {
+    opacity: 1;
+    animation: glitch 0.4s ease;
+}
+
+.cyber-button:hover .cyber-button__line--top {
+    transform: scaleX(1);
+}
+
+.cyber-button:hover .cyber-button__line--bottom {
+    transform: scaleX(1);
+}
+
+@keyframes glitch {
+    0% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); }
+    20% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); }
+    40% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); }
+    60% { clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%); }
+    80% { clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%); }
+    100% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); }
+}
+
+/* Update claimed state for cyber button */
+.cyber-button.claimed {
+    pointer-events: none;
+}
+
+.cyber-button.claimed .cyber-button__text {
+    color: #000000;
+    font-weight: 600;
+}
+
+.cyber-button.claimed .cyber-button__glitch {
+    opacity: 1;
+    background: linear-gradient(45deg, var(--success), var(--accent-secondary));
+}
+
+/* Loading state for cyber button */
+.cyber-button.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.cyber-button.loading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-secondary);
+    animation: loading 2s ease infinite;
+}
+
+/* Update login page styles */
+.login-subtitle {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.glitch {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0.05em 0 0 var(--accent-primary),
+                -0.05em -0.025em 0 var(--accent-secondary);
+    animation: glitch 1s infinite;
+    color: var(--text-primary);
+    letter-spacing: 2px;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--accent-primary);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--accent-secondary);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.cyber-text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    letter-spacing: 3px;
+    opacity: 0.8;
+    text-transform: uppercase;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(31px, 9999px, 94px, 0);
+        transform: skew(0.85deg);
+    }
+    5% {
+        clip: rect(91px, 9999px, 43px, 0);
+        transform: skew(0.35deg);
+    }
+    10% {
+        clip: rect(15px, 9999px, 13px, 0);
+        transform: skew(0.95deg);
+    }
+    15% {
+        clip: rect(83px, 9999px, 96px, 0);
+        transform: skew(0.45deg);
+    }
+    20% {
+        clip: rect(25px, 9999px, 46px, 0);
+        transform: skew(0.15deg);
+    }
+    25% {
+        clip: rect(12px, 9999px, 32px, 0);
+        transform: skew(0.65deg);
+    }
+    30% {
+        clip: rect(62px, 9999px, 78px, 0);
+        transform: skew(0.25deg);
+    }
+    35% {
+        clip: rect(72px, 9999px, 21px, 0);
+        transform: skew(0.75deg);
+    }
+    40% {
+        clip: rect(43px, 9999px, 55px, 0);
+        transform: skew(0.85deg);
+    }
+    45% {
+        clip: rect(56px, 9999px, 89px, 0);
+        transform: skew(0.45deg);
+    }
+    50% {
+        clip: rect(27px, 9999px, 67px, 0);
+        transform: skew(0.95deg);
+    }
+    55% {
+        clip: rect(88px, 9999px, 42px, 0);
+        transform: skew(0.35deg);
+    }
+    60% {
+        clip: rect(16px, 9999px, 98px, 0);
+        transform: skew(0.65deg);
+    }
+    65% {
+        clip: rect(74px, 9999px, 34px, 0);
+        transform: skew(0.15deg);
+    }
+    70% {
+        clip: rect(35px, 9999px, 76px, 0);
+        transform: skew(0.75deg);
+    }
+    75% {
+        clip: rect(65px, 9999px, 23px, 0);
+        transform: skew(0.25deg);
+    }
+    80% {
+        clip: rect(19px, 9999px, 87px, 0);
+        transform: skew(0.85deg);
+    }
+    85% {
+        clip: rect(93px, 9999px, 45px, 0);
+        transform: skew(0.45deg);
+    }
+    90% {
+        clip: rect(22px, 9999px, 65px, 0);
+        transform: skew(0.95deg);
+    }
+    95% {
+        clip: rect(84px, 9999px, 32px, 0);
+        transform: skew(0.35deg);
+    }
+    100% {
+        clip: rect(28px, 9999px, 91px, 0);
+        transform: skew(0.65deg);
+    }
+}
+
+/* Space and stars background */
+.space-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #0a0a0a 0%, #1a1a1a 100%);
+    overflow: hidden;
+}
+
+@function multiple-box-shadow($n) {
+    $value: '#{random(2000)}px #{random(2000)}px #FFF';
+    @for $i from 2 through $n {
+        $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+    }
+    @return unquote($value);
+}
+
+#stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: multiple-box-shadow(700);
+    animation: animateStars 50s linear infinite;
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 1px;
+        height: 1px;
+        background: transparent;
+        box-shadow: multiple-box-shadow(700);
+    }
+}
+
+#stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: multiple-box-shadow(200);
+    animation: animateStars 100s linear infinite;
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 2px;
+        height: 2px;
+        background: transparent;
+        box-shadow: multiple-box-shadow(200);
+    }
+}
+
+#stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: multiple-box-shadow(100);
+    animation: animateStars 150s linear infinite;
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 3px;
+        height: 3px;
+        background: transparent;
+        box-shadow: multiple-box-shadow(100);
+    }
+}
+
+@keyframes animateStars {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-2000px); }
+}
+
+/* Enhanced login container */
+.cyber-panel {
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--accent-primary);
+    border-radius: 15px;
+    padding: 3rem;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    margin: 4rem auto;
+    box-shadow: 0 0 30px rgba(255, 0, 85, 0.2);
+    animation: panelFloat 4s ease-in-out infinite;
+}
+
+@keyframes panelFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Cyber header with glitch effect */
+.cyber-header {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.cyber-glitch {
+    font-size: 4rem;
+    font-weight: 800;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    position: relative;
+    animation: textFloat 2s ease-in-out infinite;
+}
+
+.cyber-glitch::before,
+.cyber-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.cyber-glitch::before {
+    animation: glitch-1 2s infinite;
+    color: var(--accent-primary);
+    clip: rect(44px, 450px, 56px, 0);
+    text-shadow: none;
+}
+
+.cyber-glitch::after {
+    animation: glitch-2 3s infinite;
+    color: var(--accent-secondary);
+    clip: rect(44px, 450px, 46px, 0);
+    text-shadow: none;
+}
+
+/* Scanner effect */
+.cyber-scanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-primary);
+    opacity: 0.5;
+    animation: scan 4s ease-in-out infinite;
+}
+
+@keyframes scan {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(100px); }
+    100% { transform: translateY(0); }
+}
+
+/* Enhanced subtitle */
+.glitch-text {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.cyber-text-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.cyber-text {
+    color: var(--accent-secondary);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.dot {
+    color: var(--accent-primary);
+    animation: pulse 2s infinite;
+}
+
+/* Grid effect */
+.cyber-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.grid-line {
+    position: absolute;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgba(255, 0, 85, 0.1),
+        transparent
+    );
+    width: 100%;
+    height: 1px;
+}
+
+.grid-line:nth-child(1) { top: 33%; }
+.grid-line:nth-child(2) { top: 66%; }
+.grid-line:nth-child(3) { top: 99%; }
+
+/* Enhanced login button */
+.btn-ocid {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 48px;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.ocid-button-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.btn-ocid:hover {
+    transform: translateY(-2px);
+}
+
+.btn-ocid:hover .ocid-button-image {
+    filter: drop-shadow(0 0 10px var(--accent-primary));
+}
+
+/* Add container glow for the button */
+.ocid-login {
+    position: relative;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 4px;
+    background: transparent;
+    border-radius: 4px;
+}
+
+.ocid-login::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 6px;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.ocid-login:hover::before {
+    opacity: 1;
+    background: var(--accent-primary);
+}
+
+/* OC-ID Connect specific styles */
+.ocid-connect-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.ocid-connect-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 320px; /* Standard width from guidelines */
+    height: 48px; /* Standard height from guidelines */
+}
+
+.ocid-button-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ocid-connect-button:hover {
+    transform: scale(1.02);
+}
+
+.ocid-connect-button:active {
+    transform: scale(0.98);
+}
+
+.ocid-connect-info {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.ocid-connect-info a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.ocid-connect-info a:hover {
+    text-decoration: underline;
+}
+
+/* Disable hover effects when button is in loading state */
+.ocid-connect-button.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}

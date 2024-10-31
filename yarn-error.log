@@ -1,0 +1,48 @@
+Arguments: 
+  /Users/muratcankoylan/.nvm/versions/node/v23.1.0/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js add -D @types/nextython app.py
+
+PATH: 
+  /Users/muratcankoylan/.cursor/extensions/ms-python.python-2024.12.3-darwin-arm64/python_files/deactivate/zsh:/Users/muratcankoylan/jezm/venv/bin:/Users/muratcankoylan/.nvm/versions/node/v23.1.0/bin:/Users/muratcankoylan/.cursor/extensions/ms-python.python-2024.12.3-darwin-arm64/python_files/deactivate/zsh:/Users/muratcankoylan/jezm/venv/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/muratcankoylan/.cursor/extensions/ms-python.python-2024.12.3-darwin-arm64/python_files/deactivate/zsh:/Users/muratcankoylan/jezm/venv/bin:/Users/muratcankoylan/anaconda3/bin:/Users/muratcankoylan/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  23.1.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@types%2fnextython: Not found
+      at params.callback [as _callback] (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:66145:18)
+      at self.callback (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:140890:22)
+      at Request.emit (node:events:507:28)
+      at Request.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:141862:10)
+      at Request.emit (node:events:507:28)
+      at IncomingMessage.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:621:28)
+      at IncomingMessage.emit (node:events:519:35)
+      at endReadableNT (node:internal/streams/readable:1696:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+npm manifest: 
+  {
+    "scripts": {
+      "build": "webpack",
+      "watch": "webpack --watch"
+    },
+    "dependencies": {
+      "@opencampus/ocid-connect-js": "^1.0.0"
+    },
+    "devDependencies": {
+      "webpack": "^5.0.0",
+      "webpack-cli": "^5.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

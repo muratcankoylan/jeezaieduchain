@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Processing Login{% endblock %}
+
+{% block content %}
+<div class="callback-container">
+    <h1>Processing Login</h1>
+    <p>Please wait while we complete your login...</p>
+</div>
+
+<script type="module">
+    import { OCAuthSandbox } from '@opencampus/ocid-connect-js';
+    
+    // Add immediate logging to debug
+    console.log('Callback page loaded');
+    console.log('URL params:', window.location.search);
+    
+    async function initializeAuth() {
+        try {
+            console.log('Initializing OCAuthSandbox...');
+            const ocAuth = new OCAuthSandbox({
+                redirectUri: window.location.origin + '/callback',
+                referralCode: 'PARTNER6'
+            });
+            
+            console.log('OCAuthSandbox initialized');
+            const authState = await ocAuth.handleLoginRedirect();
+            console.log('Auth state:', authState);
+            
+            if (authState && authState.idToken) {
+                console.log('Login successful, sending auth data to server...');
+                const response = await fetch('/callback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        idToken: authState.idToken,
+                        accessToken: authState.accessToken,
+                        OCId: authState.OCId,
+                        ethAddress: authState.ethAddress
+                    })
+                });
+
+                if (response.ok) {
+                    console.log('Server authentication successful');
+                    window.location.href = '/profile';
+                } else {
+                    throw new Error('Server authentication failed');
+                }
+            } else {
+                console.log('No auth state or ID token');
+                window.location.href = '/login';
+            }
+        } catch (error) {
+            console.error('Error in callback:', error);
+            window.location.href = '/login';
+        }
+    }
+
+    // Initialize auth process
+    initializeAuth().catch(error => {
+        console.error('Initialization error:', error);
+        window.location.href = '/login';
+    });
+</script>
+{% endblock %} 

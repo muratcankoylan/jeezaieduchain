@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="welcome-banner">
+        <div class="welcome-text">
+            <h1>Welcome to JEEZAI</h1>
+            <p>Your Journey in Decentralized AI Learning</p>
+        </div>
+    </div>
+
+    <div class="profile-content">
+        <div class="profile-section">
+            <div class="section-header">
+                <h2>Account Details</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="info-grid">
+                <div class="info-item glow">
+                    <label>OCID</label>
+                    <p class="highlight">{{ user.ocid }}</p>
+                </div>
+                <div class="info-item glow">
+                    <label>ETH Address</label>
+                    <p class="eth-address highlight">{{ user.eth_address }}</p>
+                </div>
+                <div class="info-item glow">
+                    <label>Login Type</label>
+                    <p class="highlight">{{ user.login_type|title }}</p>
+                </div>
+                <div class="info-item glow">
+                    <label>User ID</label>
+                    <p class="highlight">{{ user.user_id }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <div class="section-header">
+                <h2>Quick Actions</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="action-buttons">
+                <a href="{{ url_for('course_success') }}" class="btn btn-primary glow-button">
+                    <span class="icon">🤖</span>
+                    AI Course Progress
+                </a>
+                <a href="{{ url_for('certification') }}" class="btn btn-secondary glow-button">
+                    <span class="icon">🎓</span>
+                    Certifications
+                </a>
+                <a href="{{ url_for('logout') }}" class="btn btn-danger">
+                    <span class="icon">🚪</span>
+                    Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
